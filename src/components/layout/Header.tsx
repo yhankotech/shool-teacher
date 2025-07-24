@@ -8,8 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Badge } from '@/components/ui/badge';
-import { Bell, User, LogOut, Settings } from 'lucide-react';
+import { User, LogOut, Settings } from 'lucide-react';
 import { professor } from '@/data/mockData';
 
 export function Header() {
@@ -31,13 +30,6 @@ export function Header() {
         </div>
 
         <div className="flex items-center space-x-4">
-          <Button variant="ghost" size="sm" className="relative">
-            <Bell className="h-5 w-5" />
-            <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 text-xs">
-              5
-            </Badge>
-          </Button>
-
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-10 w-10 rounded-full">

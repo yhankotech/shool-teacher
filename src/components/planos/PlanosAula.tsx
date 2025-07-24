@@ -54,7 +54,7 @@ export function PlanosAula() {
         
         <Dialog>
           <DialogTrigger asChild>
-            <Button>
+            <Button className='bg-blue-500 hover:bg-blue-600'>
               <Plus className="mr-2 h-4 w-4" />
               Novo Plano
             </Button>
@@ -110,7 +110,7 @@ export function PlanosAula() {
                     {plano.disciplina} • {turmas.find(t => t.id === plano.turmaId)?.nome}
                   </CardDescription>
                 </div>
-                <Badge variant={getStatusColor(plano.status)}>
+                <Badge variant={getStatusColor(plano.status)} className={ plano.status == "aprovado" ?'bg-green-500 text-white' : 'bg-red-600 text-white'}>
                   {plano.status}
                 </Badge>
               </div>
@@ -150,10 +150,10 @@ export function PlanosAula() {
                   </Button>
                   
                   <div className="flex space-x-2">
-                    <Button variant="outline" size="sm">
+                    <Button variant="outline" size="sm" className='bg-blue-500 hover:bg-blue-600 text-white hover:text-white'>
                       <Edit className="h-4 w-4" />
                     </Button>
-                    <Button variant="outline" size="sm">
+                    <Button variant="outline" size="sm" className='bg-green-500 hover:bg-green-600 text-white hover:text-white'>
                       <Send className="h-4 w-4" />
                     </Button>
                   </div>
@@ -275,8 +275,8 @@ function NovoPlanoForm() {
       </div>
 
       <div className="flex justify-end space-x-2">
-        <Button variant="outline">Salvar como Rascunho</Button>
-        <Button>Enviar para Aprovação</Button>
+        <Button variant="outline" className='bg-blue-500 hover:bg-blue-600 text-white hover:text-white'>Salvar como Rascunho</Button>
+        <Button className='bg-green-600 hover:bg-green-500 text-white hover:text-white'>Enviar para Aprovação</Button>
       </div>
     </div>
   );
@@ -341,11 +341,11 @@ function DetalhesPlano({ plano }: { plano: PlanoAula }) {
       </div>
 
       <div className="flex justify-end space-x-2 pt-4">
-        <Button variant="outline">
+        <Button variant="outline" className='bg-blue-600 hover:bg-blue-500 text-white hover:text-white'>
           <Edit className="mr-2 h-4 w-4" />
           Editar
         </Button>
-        <Button>
+        <Button className='bg-green-600 hover:bg-green-500 text-white hover:text-white'>
           <Send className="mr-2 h-4 w-4" />
           Enviar para Supervisor
         </Button>

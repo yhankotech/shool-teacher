@@ -13,7 +13,6 @@ import {
   Plus,
   GraduationCap,
   Edit,
-  Send,
   Download,
   Calculator,
   Eye,
@@ -55,7 +54,7 @@ export function NotasPauta() {
           </Button>
           <Dialog>
             <DialogTrigger asChild>
-              <Button>
+              <Button className='bg-green-600 hover:bg-green-500 text-white hover:text-white'>
                 <Plus className="mr-2 h-4 w-4" />
                 Lançar Notas
               </Button>
@@ -173,7 +172,7 @@ export function NotasPauta() {
                             <span className="font-bold text-lg">{media}</span>
                           </TableCell>
                           <TableCell className="text-center">
-                            <Badge variant={statusInfo.color as any}>
+                            <Badge variant={statusInfo.color as any} className={ statusInfo.status == "aprovado" ? "bg-green-600 text-white": "bg-red-600 text-white"}>
                               {statusInfo.status}
                             </Badge>
                           </TableCell>
@@ -378,7 +377,7 @@ function LancarNotasForm({ turma }: { turma: Turma }) {
 
       <div className="flex justify-end space-x-2 pt-4">
         <Button variant="outline">Cancelar</Button>
-        <Button>
+        <Button className='bg-green-600 hover:bg-green-500 text-white hover:text-white'>
           <Calculator className="mr-2 h-4 w-4" />
           Salvar Notas
         </Button>

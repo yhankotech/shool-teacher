@@ -1,6 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import {
   BarChart,
@@ -21,7 +20,6 @@ import {
   TrendingUp,
   Calendar,
   MessageCircle,
-  Plus
 } from 'lucide-react';
 import { turmas, planosAula, notificacoes, atividades } from '@/data/mockData';
 
@@ -165,10 +163,6 @@ export function Dashboard() {
               <CardTitle>Planos de Aula Recentes</CardTitle>
               <CardDescription>Últimos planos criados</CardDescription>
             </div>
-            <Button size="sm">
-              <Plus className="mr-2 h-4 w-4" />
-              Novo Plano
-            </Button>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -180,7 +174,7 @@ export function Dashboard() {
                       {plano.disciplina} - {new Date(plano.data).toLocaleDateString('pt-BR')}
                     </p>
                   </div>
-                  <Badge variant={plano.status === 'aprovado' ? 'default' : 'secondary'}>
+                  <Badge variant={plano.status === 'aprovado' ? 'sucess' : 'secondary'}>
                     {plano.status}
                   </Badge>
                 </div>
