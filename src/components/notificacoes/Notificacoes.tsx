@@ -8,11 +8,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Bell,
   Calendar,
-  DollarSign,
   Award,
   BookOpen,
   Users,
-  Download,
   Eye,
   Check,
   X,
@@ -29,7 +27,6 @@ export function Notificacoes() {
     switch (tipo) {
       case 'seminario': return BookOpen;
       case 'concurso': return Award;
-      case 'pagamento': return DollarSign;
       case 'planificacao': return Calendar;
       default: return Bell;
     }
@@ -39,7 +36,6 @@ export function Notificacoes() {
     switch (tipo) {
       case 'seminario': return 'bg-blue-100 text-blue-600';
       case 'concurso': return 'bg-green-100 text-green-600';
-      case 'pagamento': return 'bg-purple-100 text-purple-600';
       case 'planificacao': return 'bg-orange-100 text-orange-600';
       default: return 'bg-gray-100 text-gray-600';
     }
@@ -49,7 +45,6 @@ export function Notificacoes() {
     switch (tipo) {
       case 'seminario': return 'Seminário';
       case 'concurso': return 'Concurso';
-      case 'pagamento': return 'Pagamento';
       case 'planificacao': return 'Planificação';
       default: return 'Geral';
     }
@@ -130,9 +125,6 @@ export function Notificacoes() {
           </TabsTrigger>
           <TabsTrigger value="seminario" onClick={() => setFiltroTipo('seminario')}>
             Seminários
-          </TabsTrigger>
-          <TabsTrigger value="pagamento" onClick={() => setFiltroTipo('pagamento')}>
-            Pagamentos
           </TabsTrigger>
           <TabsTrigger value="concurso" onClick={() => setFiltroTipo('concurso')}>
             Concursos
@@ -256,22 +248,6 @@ export function Notificacoes() {
                       </p>
                     </div>
 
-                    {notificacaoSelecionada.tipo === 'pagamento' && (
-                      <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <DollarSign className="h-5 w-5 text-green-600" />
-                          <h3 className="font-medium text-green-800">Recibo de Pagamento</h3>
-                        </div>
-                        <p className="text-sm text-green-700 mb-3">
-                          Seu recibo de pagamento está disponível para download.
-                        </p>
-                        <Button size="sm" className="bg-green-600 hover:bg-green-700">
-                          <Download className="mr-2 h-4 w-4" />
-                          Baixar Recibo
-                        </Button>
-                      </div>
-                    )}
-
                     <div className="flex space-x-2 pt-4">
                       {!notificacaoSelecionada.lida && (
                         <Button variant="outline" size="sm">
@@ -320,38 +296,6 @@ export function Notificacoes() {
                       <div className="flex items-center justify-between mt-3">
                         <Badge variant="outline">Seminário</Badge>
                         <Button size="sm">Ver Detalhes</Button>
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="pagamento">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <DollarSign className="mr-2 h-5 w-5" />
-                Pagamentos e Recibos
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {notificacoes
-                  .filter(n => n.tipo === 'pagamento')
-                  .map((notificacao) => (
-                    <div key={notificacao.id} className="p-4 border rounded-lg bg-green-50">
-                      <h3 className="font-medium">{notificacao.titulo}</h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {notificacao.conteudo}
-                      </p>
-                      <div className="flex items-center justify-between mt-3">
-                        <Badge variant="outline">Pagamento</Badge>
-                        <Button size="sm">
-                          <Download className="mr-2 h-4 w-4" />
-                          Baixar Recibo
-                        </Button>
                       </div>
                     </div>
                   ))}

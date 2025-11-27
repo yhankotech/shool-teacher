@@ -51,26 +51,31 @@ export function PlanosAula() {
           <h1 className="text-3xl font-bold">Planos de Aula</h1>
           <p className="text-muted-foreground">Gerencie seus planos de aula por turma e disciplina</p>
         </div>
-        
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button className='bg-blue-500 hover:bg-blue-600'>
-              <Plus className="mr-2 h-4 w-4" />
-              Novo Plano
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-4xl max-h-[90vh]">
-            <DialogHeader>
-              <DialogTitle>Criar Novo Plano de Aula</DialogTitle>
-              <DialogDescription>
-                Preencha os detalhes do seu plano de aula
-              </DialogDescription>
-            </DialogHeader>
-            <ScrollArea className="max-h-[70vh] pr-4">
-              <NovoPlanoForm />
-            </ScrollArea>
-          </DialogContent>
-        </Dialog>
+        <div className="flex space-x-2">
+          <Button className='bg-green-500 hover:bg-green-600 text-white hover:text-white'>
+            Carregar plano de aula
+          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className='bg-blue-500 hover:bg-blue-600'>
+                <Plus className="mr-2 h-4 w-4" />
+                Novo Plano
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl max-h-[90vh]">
+              <DialogHeader>
+                <DialogTitle>Criar Novo Plano de Aula</DialogTitle>
+                <DialogDescription>
+                  Preencha os detalhes do seu plano de aula
+                </DialogDescription>
+              </DialogHeader>
+              <ScrollArea className="max-h-[70vh] pr-4">
+                <NovoPlanoForm />
+              </ScrollArea>
+            </DialogContent>
+          </Dialog>
+        </div>
+
       </div>
 
       {/* Filtros */}

@@ -1,4 +1,4 @@
-import { Professor, Turma, Aluno, PlanoAula, Notificacao, AtividadeEscolar } from '@/types';
+import { Professor, Turma, PlanoAula, Notificacao, AtividadeEscolar } from '@/types';
 
 export const professor: Professor = {
   id: '1',
@@ -104,15 +104,6 @@ export const notificacoes: Notificacao[] = [
   },
   {
     id: '2',
-    titulo: 'Recibo de Pagamento - Janeiro 2024',
-    conteudo: 'Seu recibo de pagamento referente ao mês de Janeiro está disponível para download.',
-    tipo: 'pagamento',
-    data: '2024-01-31T14:30:00Z',
-    lida: false,
-    importante: false
-  },
-  {
-    id: '3',
     titulo: 'Concurso Público de Professores 2024',
     conteudo: 'Abertas as inscrições para o concurso público de professores. Prazo limite: 28 de Fevereiro.',
     tipo: 'concurso',

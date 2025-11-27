@@ -72,7 +72,7 @@ export interface Notificacao {
   id: string;
   titulo: string;
   conteudo: string;
-  tipo: 'seminario' | 'concurso' | 'pagamento' | 'planificacao' | 'geral';
+  tipo: 'seminario' | 'concurso' | 'planificacao' | 'geral';
   data: string;
   lida: boolean;
   importante: boolean;
