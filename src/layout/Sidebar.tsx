@@ -16,6 +16,7 @@ import {
   ChevronRight,
   User
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface SidebarProps {
   activeTab: string;
@@ -29,13 +30,14 @@ const menuItems = [
   { id: 'chat', label: 'Mensagens', icon: MessageCircle, badge: 3 },
   { id: 'notificacoes', label: 'Notificações', icon: Bell, badge: 5 },
   { id: 'atividades', label: 'Atividades', icon: Calendar },
-  { id: 'ia-assistant', label: 'Assistente IA', icon: Bot },
+  { id: 'assistante', label: 'Assistente IA', icon: Bot },
   { id: 'recursos', label: 'Recursos', icon: Files },
   { id: 'perfil', label: 'Perfil', icon: User },
 ];
 
 export function Sidebar({ activeTab, onTabChange }: SidebarProps) {
   const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className={cn(
@@ -70,7 +72,10 @@ export function Sidebar({ activeTab, onTabChange }: SidebarProps) {
                 collapsed && "px-2",
                 activeTab === item.id && "bg-blue-600 text-white hover:bg-blue-700"
               )}
-              onClick={() => onTabChange(item.id)}
+              onClick={() => {
+                onTabChange(item.id)
+                navigate("/"+ item.id)
+              }}
             >
               <item.icon className={cn("h-4 w-4", !collapsed && "mr-3")} />
               {!collapsed && (
