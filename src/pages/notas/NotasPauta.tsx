@@ -17,7 +17,7 @@ import {
   Calculator,
   Eye,
   Mail
-} from 'lucide-react';
+} from '../../lib/icons';
 import { turmas } from '@/data/mockData';
 import { Turma, Aluno } from '@/types';
 

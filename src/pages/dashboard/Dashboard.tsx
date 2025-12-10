@@ -20,7 +20,7 @@ import {
   TrendingUp,
   Calendar,
   MessageCircle,
-} from 'lucide-react';
+} from '../../lib/icons';
 import { turmas, planosAula, notificacoes, atividades } from '@/data/mockData';
 
 const notasData = [

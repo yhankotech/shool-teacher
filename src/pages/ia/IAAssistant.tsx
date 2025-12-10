@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
@@ -10,7 +9,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Bot,
   Send,
-  BookOpen,
   Lightbulb,
   Users,
   Target,
@@ -18,7 +16,7 @@ import {
   Sparkles,
   Brain,
   FileText
-} from 'lucide-react';
+} from '../../lib/icons';
 
 interface Conversa {
   id: string;
