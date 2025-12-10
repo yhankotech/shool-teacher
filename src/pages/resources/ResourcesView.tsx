@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useStudent } from '@/contexts/StudentContext';
-import { BookOpen, Download, Search, FileText, Video, Link, Gamepad2, Calendar, Eye } from 'lucide-react';
+import { BookOpen, Download, Search, FileText, Video, Link, Gamepad2, Calendar, Eye } from '../../lib/icons';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 

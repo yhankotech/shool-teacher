@@ -18,7 +18,7 @@ import {
   Send,
   Search,
   Filter
-} from 'lucide-react';
+} from '../../lib/icons';
 import { planosAula, turmas } from '@/data/mockData';
 import { PlanoAula } from '@/types';
 
